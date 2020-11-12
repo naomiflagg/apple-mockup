@@ -20,6 +20,7 @@ nav a { color: #fff; }
 
 header {
   padding: 80px 0;
+  margin-bottom: 2px;
   background: url(https://web.archive.org/web/20140301004302im_/http://images.apple.com/v/home/as/images/your_verse_hero.jpg) 50% 100% no-repeat;
 }
 
@@ -98,8 +99,34 @@ header p {
 .squares {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px;
 }
 
 .square {
-  width: 100%;/* overflow: hidden; */
+  width: 100%;
 }
+
+footer {
+  margin: 15px 250px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+  align-content: center;
+  align-items: end;
+  font-size: 11px;
+  font-weight: 300;
+  color: #525151;
+}
+
+footer p { margin-bottom: 0; }
+
+footer a { color: #0173ac; }
+
+.ftr-right { 
+  padding: 0 5px;
+  border-left: 1px solid #9c9ea1;
+}
+
+.ftr-right:nth-child(1) { border: none; }
+
+.ftr-right-wrapper { justify-self: end; }
