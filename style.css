@@ -1,9 +1,19 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+/* 
+* Overall styles 
+*/
 
 body {
   margin: 0;
@@ -11,48 +21,74 @@ body {
   text-align: center;
 }
 
-a {
-  text-decoration: none;
-}
+a { text-decoration: none; }
 
-header,
+header a,
 nav a { color: #fff; }
 
+/*
+* Navigation bar and headings
+*/
+
+/* Container for navbar and headings */
 header {
   padding: 80px 0;
   margin-bottom: 2px;
   background: url(https://web.archive.org/web/20140301004302im_/http://images.apple.com/v/home/as/images/your_verse_hero.jpg) 50% 100% no-repeat;
 }
 
+/* Navbar */
+
 nav {
   width: 980px;
   margin: 0 auto;
   font-size: 13.5px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #808080), color-stop(51%, #666),  to(#808080));
+  background: -o-linear-gradient(top, #808080 50%, #666 51%,  #808080);
   background: linear-gradient(to bottom, #808080 50%, #666 51%,  #808080);
   border: 1px solid #666;
   border-radius: 4px;
-  box-shadow: rgba(0,0,0,0.3) 0 1px 2px;
+  -webkit-box-shadow: rgba(0,0,0,0.3) 0 1px 2px;
+          box-shadow: rgba(0,0,0,0.3) 0 1px 2px;
 }
 
 nav ul {
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav li {
   padding: 6px 0;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   list-style: none;
   border-left: 1px solid #5c5b5b;
 }
 
-nav li:nth-child(1) { border: none; }
+nav li:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #5a5a5a), color-stop(51%, rgb(71, 71, 71)),  to(#5a5a5a));
+  background: -o-linear-gradient(top, #5a5a5a 50%, rgb(71, 71, 71) 51%,  #5a5a5a);
+  background: linear-gradient(to bottom, #5a5a5a 50%, rgb(71, 71, 71) 51%,  #5a5a5a);
+}
+
+nav li:first-child { border: none; }
+
+/* Search input bar */
 
 .search {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -78,6 +114,8 @@ input:focus {
   left: 20px;
 }
 
+/* Heading text */
+
 h1 {
   margin-bottom: 10px;
   font-size: 70px;
@@ -96,23 +134,37 @@ header p {
   font-weight: 200;
 }
 
-.squares {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2px;
+header p:hover {
+  text-decoration: underline;
 }
 
-.square {
-  width: 100%;
+/* Square photos across page */
+
+.squares {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2px 1fr 2px 1fr 2px 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px;
+  cursor: pointer;
 }
+
+.square { width: 100%; }
+
+/* Footer */
 
 footer {
   margin: 15px 250px;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   justify-items: start;
-  align-content: center;
-  align-items: end;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
   font-size: 11px;
   font-weight: 300;
   color: #525151;
@@ -121,12 +173,3 @@ footer {
 footer p { margin-bottom: 0; }
 
 footer a { color: #0173ac; }
-
-.ftr-right { 
-  padding: 0 5px;
-  border-left: 1px solid #9c9ea1;
-}
-
-.ftr-right:nth-child(1) { border: none; }
-
-.ftr-right-wrapper { justify-self: end; }
