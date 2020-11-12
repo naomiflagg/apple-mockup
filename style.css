@@ -24,6 +24,7 @@ body {
 a { text-decoration: none; }
 
 header a,
+nav i,
 nav a { color: #fff; }
 
 /*
